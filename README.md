@@ -5,7 +5,7 @@ Calculate the amount of payment for each courier for the preliminary month. For 
 
 
 
-### View description
+### Final view description
 
 * `id` — row identifier.
 * `courier_id` — courier's ID that will receive the payment.
@@ -31,9 +31,12 @@ Depends on the courier's rating, where r is the average rating of the courier in
 
 ### Structure
 
-* src -> dags: dags files
+* src -> dags: dag files:
+	- couriers_get_data.py: the main dag, collects data via API and downloads it to the DB
+	- couriers_db_stages.py: downloads data from sag to ads and CDM
+
 * sql_scripts: DDL & DML for BD
-* questions.md: project questions
+* docker_compose.yml: server connection configuration
 
 
 
